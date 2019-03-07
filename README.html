@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="hibernate-vs-jdbc">Hibernate Vs JDBC</h1>
+<p>Aujourd'hui c'est match ! Nous allons opposer <em>JDBC</em> à <em>Hibernate / JPA</em>, deux façon d'accéder aux données dans les application java et les couches <em>DAO - data access object</em>.</p>
+<p>Ce sujet est une discussion très fréquente lors du lancement d'un nouveau projet.</p>
+<h2 id="hibernate">Hibernate</h2>
+<p><img src="img/hibernate.svg" alt="alt text"></p>
+<p>Hibernate est un ORM - Object Relational Mapping, et un ORM est une interface entre une application et une base de données, et plus exactement entre des objets et des tables.</p>
+<p>JPA est la normalisation des ORM dans le monde Java : Java Persistece API.</p>
+<h2 id="jdbc">JDBC</h2>
+<p><img src="img/jdbc.png" alt="alt text"></p>
+<p>JDBC est le mécanisme qui permet à Java de lancer des requêtes SQL sur des bases de données. C'est l'équivalent de ODBC dans le monde Microsoft.</p>
+<p>Hibernate utilise JDBC pour dialoguer avec les bases de données.</p>
+<h2 id="les-avantages-dhibernate-par-rapport-%C3%A0-jdbc">Les avantages d'hibernate par rapport à JDBC</h2>
+<h3 id="configuration-over-code">Configuration over code</h3>
+<p>Il est très simple de définir un objet qui sera mappé à une table de base de donnée avec les annotations <em><strong>@Entity</strong></em> et <em><strong>@Id</strong></em> :</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@Entity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Article</span> </span>{
+  
+  <span class="hljs-meta">@Id</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">long</span> id;
+  
+  <span class="hljs-keyword">private</span> String code;
+
+  + Getters et Setters
+}
+</div></code></pre>
+<p>L'objet <strong>Article</strong> est mappé avec une table Article qui contient les colonnes <em><strong>id</strong></em> et <em><strong>code</strong></em>. Par convention le nom de l'objet correspond au nom de la table, et le nom des attributs au nom des colonnes de la table.</p>
+<p>Il est obligatoire d'avoir une colonne idantifiant (ou un idantifiant clé composé de plusieurs colonnes).</p>
+<p>Ensuite Hibernate permet d'enregistrer l'objet dans la base, de le modifier, de le supprimer sans devoir écrire une seule ligne de code SQL. Par exemple pour récupérer l'article avec id 3 :</p>
+<pre class="hljs"><code><div>Article a = articleFactory.get(<span class="hljs-number">3</span>);
+</div></code></pre>
+<p>En pur JDBC il faudrait écrire 3 fonctions SQL, et récupérer les données, et les assigner à un objet java.</p>
+<p>Si on ajoute une colonne, en Hibernate il suffit de l'ajouter dans la classe. En JDBC il faudra modifier toutes les fonctions.</p>
+<h3 id="portabilit%C3%A9-du-code">Portabilité du code</h3>
+<p>Hibernate utilise un système de proxy pour dialoguer (ou dialect) avec les bases de données, les requêtes sont codées dans le language &quot;HQL&quot; et c'est le dialect Hibernate qui se charge de traduire les requêtes SQL en HQL.</p>
+<p>On peut donc passer d'une base de données à une autre simplement en modifiant la configuration Hibernate. Ou alors créer une application qui gère plusieurs bases de données.</p>
+<p>Voilà les &quot;dialect&quot; proposés par Hibernate :</p>
+<table>
+<thead>
+<tr>
+<th>Base de donnée</th>
+<th>Dialect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DB2</td>
+<td>org.hibernate.dialect.DB2Dialect</td>
+</tr>
+<tr>
+<td>DB2 AS/400</td>
+<td>org.hibernate.dialect.DB2400Dialect</td>
+</tr>
+<tr>
+<td>DB2 OS390</td>
+<td>org.hibernate.dialect.DB2390Dialect</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>org.hibernate.dialect.PostgreSQLDialect</td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td>org.hibernate.dialect.MySQLDialect</td>
+</tr>
+<tr>
+<td>MySQL with InnoDB</td>
+<td>org.hibernate.dialect.MySQLInnoDBDialect</td>
+</tr>
+<tr>
+<td>MySQL with MyISAM</td>
+<td>org.hibernate.dialect.MySQLMyISAMDialect</td>
+</tr>
+<tr>
+<td>Oracle (toutes versions)</td>
+<td>org.hibernate.dialect.OracleDialect</td>
+</tr>
+<tr>
+<td>Oracle 9i</td>
+<td>org.hibernate.dialect.Oracle9iDialect</td>
+</tr>
+<tr>
+<td>Oracle 10g</td>
+<td>org.hibernate.dialect.Oracle10gDialect</td>
+</tr>
+<tr>
+<td>Sybase</td>
+<td>org.hibernate.dialect.SybaseDialect</td>
+</tr>
+<tr>
+<td>Sybase Anywhere</td>
+<td>org.hibernate.dialect.SybaseAnywhereDialect</td>
+</tr>
+<tr>
+<td>Microsoft SQL Server</td>
+<td>org.hibernate.dialect.SQLServerDialect</td>
+</tr>
+<tr>
+<td>SAP DB</td>
+<td>org.hibernate.dialect.SAPDBDialect</td>
+</tr>
+<tr>
+<td>Informix</td>
+<td>org.hibernate.dialect.InformixDialect</td>
+</tr>
+<tr>
+<td>HypersonicSQL</td>
+<td>org.hibernate.dialect.HSQLDialect</td>
+</tr>
+<tr>
+<td>Ingres</td>
+<td>org.hibernate.dialect.IngresDialect</td>
+</tr>
+<tr>
+<td>Progress</td>
+<td>org.hibernate.dialect.ProgressDialect</td>
+</tr>
+<tr>
+<td>Mckoi SQL</td>
+<td>org.hibernate.dialect.MckoiDialect</td>
+</tr>
+<tr>
+<td>Interbase</td>
+<td>org.hibernate.dialect.InterbaseDialect</td>
+</tr>
+<tr>
+<td>Pointbase</td>
+<td>org.hibernate.dialect.PointbaseDialect</td>
+</tr>
+<tr>
+<td>FrontBase</td>
+<td>org.hibernate.dialect.FrontbaseDialect</td>
+</tr>
+<tr>
+<td>Firebird</td>
+<td>org.hibernate.dialect.FirebirdDialect</td>
+</tr>
+</tbody>
+</table>
+<p>Et de plus il est assez simple d'implémenter un nouveau Dialect.</p>
+<h3 id="jointures-objets-li%C3%A9s">Jointures / Objets liés</h3>
+<p>Hibernate permet de facilement faire des requête sur plusieurs objets ou tables liées. Exemple :</p>
+<pre class="hljs"><code><div>"<span class="hljs-keyword">Select</span> article <span class="hljs-keyword">where</span> article.fournisseur.departement = <span class="hljs-number">67</span><span class="hljs-string">"
+</span></div></code></pre>
+<p>En JDBC il faudrait faire une requête avec trois jointures ...</p>
+<h2 id="pourquoi-jdbc">Pourquoi JDBC ?</h2>
+<p>Hibernate ne semble proposer que des avantages par rapport à JDBC.</p>
+<p>JDBC est plus simple à apprendre et à mettre en œuvre (bien que des framework comme Spring Boot permettent d'utiliser Hibernate avec un minimum de configuration).</p>
+<p>On pourrait aussi dire que JDBC est plus adapté pour les applications de petites tailles qui n'ont que quelques tables.</p>
+<h3 id="les-performances">Les performances</h3>
+<p>Il faut bien comprendre le fonctionnement d'Hibernate afin d'éviter de se retrouver avec une application très lente.</p>
+<p>En utilisant Hibernate, le développeur n'a aucune idée des requêtes générées vers la base de données. Prenons le cas d'un objet 'Client' qui aurait 60 colonnes, et on souhaite afficher une liste des clients uniquement les noms en prénom. La table contient 1 000 clients.</p>
+<p>En SQL on ferait :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> nom, prenom <span class="hljs-keyword">from</span> <span class="hljs-keyword">Client</span>;
+</div></code></pre>
+<p>En HQL :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> <span class="hljs-keyword">client</span> <span class="hljs-keyword">from</span> <span class="hljs-keyword">Client</span>;
+</div></code></pre>
+<p>Ce qui sera être traduit en SQL par :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> <span class="hljs-keyword">Client</span>;
+</div></code></pre>
+<p>Et qui va instancier 1000 objets Clients avec les 60 colonnes alors qu'on ne souhaite afficher que les nom et prénom des clients. La requête SQL sera énorme par rapport, et l'impact sur la mémoire également car on chargera des données qui ne sont pas nécessaires sur le moment.</p>
+<p>Prenons maintenant le cas d'un objet contact relié à un objet société. On veut afficher les noms et prénoms des contacts et la raison sociale de leur entreprise. En HQL :</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> contact <span class="hljs-keyword">from</span> Contact;
+</div></code></pre>
+<p>Ce qui nous retournera en Java une liste des contacts avec un lien dans chaque contact vers leur société.</p>
+<p>Hibernate va générer une requête jointe et complète entre les Contacts et les sociétés, alors que ne voudra utiliser que certaines colonnes des deux objets.</p>
+<p>Encore une fois, la requête générée sera disproportionnée par rapport au besoin.</p>
+<h2 id="r%C3%A9sultat-du-match">Résultat du match</h2>
+<p>Pour moi victoire de Hibernate, mais ...</p>
+<p>Ma conclusion est que Hibernate est vraiment génial pour effectuer des opérations de gestion sur les objets : création, modification, lecture d'un enregistrement, suppression. Et permet, même sur des petites applications, de développement très rapidement des fonctionnalités simples.</p>
+<p>Dès que l'on souhaite récupérer un ensemble de données, il faut faire attention à l'impact sur les performances et dans certains cas préférer une requête ciblée en SQL / JDBC qui sera beaucoup plus efficace.</p>
+<p>L'autre solution est de mettre en place un système de cache qui va conserver en mémoire une copie des objets stockés en base de données, et qui évitera des répéter sans arrêt les mêmes requêtes.</p>
+<p>Je conseille d'utiliser Hibernate et d'activer l'option <em><strong>show_sql</strong></em> qui affichera dans un fichier de log les requêtes générées, et donc le développeur pourra constater le nombre de requêtes ainsi que leur complexité, ... et en cas de lenteur décider soit de mettre les données en cache, soit d'utiliser une requête JDBC / SQL.</p>
+
+</body>
+</html>
