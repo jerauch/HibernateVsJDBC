@@ -148,9 +148,9 @@ Encore une fois, la requête générée sera disproportionnée par rapport au be
 
 Pour moi victoire de Hibernate, mais ... 
 
-Ma conclusion est que Hibernate est vraiment génial pour effectuer des opérations de gestion sur les objets : création, modification, lecture d'un enregistrement, suppression. Et permet, même sur des petites applications, de développement très rapidement des fonctionnalités simples.
+Hibernate est vraiment génial pour effectuer des opérations de gestion sur les objets : création, modification, lecture d'un enregistrement, suppression, requêtes, ... Et permet, même sur des petites applications, de développement très rapidement des fonctionnalités simples.
 
-Dès que l'on souhaite récupérer un ensemble de données, il faut faire attention à l'impact sur les performances et dans certains cas préférer une requête ciblée en SQL / JDBC qui sera beaucoup plus efficace.
+Dès que l'on souhaite récupérer un ensemble de données complexes, il faut faire attention à l'impact sur les performances et dans certains cas préférer une requête ciblée en SQL / JDBC qui sera beaucoup plus efficace.
 
 L'autre solution est de mettre en place un système de cache qui va conserver en mémoire une copie des objets stockés en base de données, et qui évitera des répéter sans arrêt les mêmes requêtes.
 
